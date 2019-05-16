@@ -27,7 +27,7 @@ import java.util.List;
 @EnableAuthorizationServer
 @Order(200)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
+/*
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
 
@@ -82,5 +82,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         registration.setFilter(filter);
         registration.setOrder(-100);
         return registration;
-    }
+    }*/
 }
