@@ -23,12 +23,11 @@ import javax.servlet.Filter;
 import java.util.ArrayList;
 import java.util.List;
 
-@EnableOAuth2Client
-@EnableAuthorizationServer
-@Order(200)
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-/*
-    @Autowired
+/*@EnableOAuth2Client
+//@EnableAuthorizationServer
+@Order(200)*/
+public class WebSecurityConfig /*extends WebSecurityConfigurerAdapter*/ {
+    /*@Autowired
     OAuth2ClientContext oauth2ClientContext;
 
     @Override
@@ -74,13 +73,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @ConfigurationProperties("facebook")
     public ClientResources facebook() {
         return new ClientResources();
-    }
-
-    @Bean
-    public FilterRegistrationBean<OAuth2ClientContextFilter> oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
-        FilterRegistrationBean<OAuth2ClientContextFilter> registration = new FilterRegistrationBean<OAuth2ClientContextFilter>();
-        registration.setFilter(filter);
-        registration.setOrder(-100);
-        return registration;
     }*/
 }
