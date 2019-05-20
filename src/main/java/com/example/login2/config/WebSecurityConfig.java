@@ -36,9 +36,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.antMatcher("/**").authorizeRequests().antMatchers("/", "/login**", "/webjars/**").permitAll().anyRequest()
                 .authenticated().and().exceptionHandling()
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/")).and().logout()
-                .logoutSuccessUrl("/").permitAll().and().csrf()
+                .logoutSuccessUrl("/").permitAll()
+
+                //uncomment those lines to enable h2 console
+                //.and()
+                //.authorizeRequests().antMatchers("/console/**").permitAll()
+
+                .and().csrf()
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
                 .addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
+
+        //uncomment those lines to enable h2 console
+        //http.csrf().disable();
+        //http.headers().frameOptions().disable();
+
         // @formatter:on
     }
 
